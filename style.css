@@ -1,0 +1,416 @@
+/* استيراد الخط والتصاميم الأساسية */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
+
+:root {
+    --bg-main: #faf8f5;
+    --text-color: #2c2c2c;
+    --text-muted: #666666;
+    
+    /* ألوان بطاقات الخدمات (Pastels) */
+    --card-pink: #fce8e6;
+    --card-purple: #ede8f5;
+    --card-green: #e2f0e8;
+    --card-orange: #fdecdb;
+    --card-blue: #e3ebf7;
+    --card-peach: #fcebe6;
+    
+    /* ألوان الأزرار والتفاصيل */
+    --btn-blue: #7188ba;
+    --btn-dark: #1e1e1e;
+    --footer-bg: #835c6a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    direction: rtl;
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 8%;
+    background: rgba(250, 248, 245, 0.95);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    display: block;
+    line-height: 1;
+}
+
+.logo span {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    display: block;
+}
+
+.navbar {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.navbar a {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: 0.3s;
+    position: relative;
+}
+
+.navbar a.active, .navbar a:hover {
+    font-weight: 700;
+}
+
+.navbar a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
+}
+
+.menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Home Section (تصميم عمودي متناسق دائماً) */
+.home {
+    padding: 120px 8% 40px;
+}
+
+.home-content-box {
+    display: flex;
+    flex-direction: column; /* جعل الصورة فوق والنص تحتها دائماً */
+    align-items: center;
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.home-image {
+    width: 100%;
+    height: 320px; /* ارتفاع متناسق وممتاز للصورة */
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.home-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-text {
+    width: 100%;
+    background-color: var(--card-orange);
+    padding: 35px 25px;
+    border-radius: 20px;
+    height: auto; /* ارتفاع مرن ليتناسب مع النص تماماً */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.home-text h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.home-text h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.home-text p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
+.gold-btn {
+    background-color: var(--btn-dark);
+    color: #fff;
+    padding: 10px 28px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.gold-btn:hover {
+    opacity: 0.85;
+}
+
+/* Titles */
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 40px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 35px;
+}
+
+/* Services Section */
+.services-section {
+    padding: 20px 8% 60px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-box {
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.3s;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+}
+
+.service-box i {
+    font-size: 1.8rem;
+    color: #444;
+}
+
+.service-box h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.service-box.pink { background-color: var(--card-pink); }
+.service-box.purple { background-color: var(--card-purple); }
+.service-box.green { background-color: var(--card-green); }
+.service-box.orange { background-color: var(--card-orange); }
+.service-box.blue { background-color: var(--card-blue); }
+.service-box.peach { background-color: var(--card-peach); }
+
+/* Prices Section */
+.prices {
+    padding: 20px 8% 60px;
+}
+
+.prices-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.price-box {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.price-box h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.price-box .price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.price-box .price span {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.price-box ul {
+    margin-bottom: 25px;
+    text-align: right;
+    display: inline-block;
+}
+
+.price-box ul li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    position: relative;
+    padding-right: 15px;
+}
+
+.price-box ul li::before {
+    content: '•';
+    position: absolute;
+    right: 0;
+    color: var(--btn-blue);
+}
+
+.price-btn {
+    display: block;
+    background-color: var(--btn-blue);
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.price-btn:hover {
+    background-color: #5b719e;
+}
+
+/* Contact Section */
+.contact {
+    padding: 20px 8% 80px;
+}
+
+.contact-info-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contact-item i {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.contact-item .fa-whatsapp { color: #25D366; }
+.contact-item .fa-instagram { color: #C13584; }
+.contact-item .fa-map-marker-alt { color: #835c6a; }
+
+.contact-item span {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.contact-item p {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--footer-bg);
+    color: #fff;
+    padding: 25px 8%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .logo a { color: #fff; }
+.footer .logo span { color: #ddd; }
+.footer p { font-size: 0.85rem; color: #eee; }
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a { color: #fff; font-size: 1.1rem; }
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .prices-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(250, 248, 245, 0.98);
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-info-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .prices-grid {
+        grid-template-columns: 1fr;
+    }
+}
