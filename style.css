@@ -7,6 +7,10 @@
     --text-muted: #666666;
 
     /* ألوان بطاقات الخدمات (Pastels) */
+<<<<<<< HEAD
+    --card-pink: #F4EFE6;
+    
+=======
     --card-pink: #fce8e6;
     --card-purple: #ede8f5;
     --card-green: #e2f0e8;
@@ -14,9 +18,10 @@
     --card-blue: #e3ebf7;
     --card-peach: #fcebe6;
 
+>>>>>>> origin/main
     /* ألوان الأزرار والتفاصيل */
     --btn-blue: #7188ba;
-    --btn-dark: #1e1e1e;
+    --btn-dark: #8B6F5C;
     --footer-bg: #835c6a;
 }
 
@@ -60,6 +65,14 @@ body {
     line-height: 1;
 }
 
+.logo a img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit:cover;
+    display:block;
+}
+
 .logo span {
     font-size: 0.65rem;
     letter-spacing: 2px;
@@ -92,7 +105,7 @@ body {
     right: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--text-color);
+    background-color: var(--btn-dark);
 }
 
 .menu-btn {
@@ -173,6 +186,7 @@ body {
 
 .gold-btn:hover {
     opacity: 0.85;
+    background-color: #666666;
 }
 
 /* Titles */
@@ -226,29 +240,14 @@ body {
     font-weight: 700;
 }
 
-.service-box.pink {
-    background-color: var(--card-pink);
-}
 
-.service-box.purple {
-    background-color: var(--card-purple);
-}
+.service-box.pink { background-color: var(--card-pink); }
+.service-box.purple { background-color: var(--card-pink); }
+.service-box.green { background-color: var(--card-pink); }
+.service-box.orange { background-color: var(--card-pink); }
+.service-box.blue { background-color: var(--card-pink); }
+.service-box.peach { background-color: var(--card-pink); }
 
-.service-box.green {
-    background-color: var(--card-green);
-}
-
-.service-box.orange {
-    background-color: var(--card-orange);
-}
-
-.service-box.blue {
-    background-color: var(--card-blue);
-}
-
-.service-box.peach {
-    background-color: var(--card-peach);
-}
 
 /* Prices Section */
 .prices {
@@ -309,12 +308,12 @@ section[id] {
     content: '•';
     position: absolute;
     right: 0;
-    color: var(--btn-blue);
+    color: var(--btn-dark);
 }
 
 .price-btn {
     display: block;
-    background-color: var(--btn-blue);
+    background-color: var(--btn-dark);
     color: #fff;
     padding: 10px 0;
     border-radius: 20px;
@@ -323,7 +322,7 @@ section[id] {
 }
 
 .price-btn:hover {
-    background-color: #5b719e;
+    background-color: #666666;
 }
 
 /* Contact Section */
@@ -370,7 +369,7 @@ section[id] {
 
 /* Footer */
 .footer {
-    background-color: var(--footer-bg);
+    background-color: var(--btn-dark);
     color: #fff;
     padding: 25px 8%;
 }
