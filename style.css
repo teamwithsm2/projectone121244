@@ -7,16 +7,11 @@
     --text-muted: #666666;
     
     /* ألوان بطاقات الخدمات (Pastels) */
-    --card-pink: #fce8e6;
-    --card-purple: #ede8f5;
-    --card-green: #e2f0e8;
-    --card-orange: #fdecdb;
-    --card-blue: #e3ebf7;
-    --card-peach: #fcebe6;
+    --card-pink: #F4EFE6;
     
     /* ألوان الأزرار والتفاصيل */
     --btn-blue: #7188ba;
-    --btn-dark: #1e1e1e;
+    --btn-dark: #8B6F5C;
     --footer-bg: #835c6a;
 }
 
@@ -60,6 +55,14 @@ body {
     line-height: 1;
 }
 
+.logo a img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit:cover;
+    display:block;
+}
+
 .logo span {
     font-size: 0.65rem;
     letter-spacing: 2px;
@@ -91,7 +94,7 @@ body {
     right: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--text-color);
+    background-color: var(--btn-dark);
 }
 
 .menu-btn {
@@ -169,6 +172,7 @@ body {
 
 .gold-btn:hover {
     opacity: 0.85;
+    background-color: #666666;
 }
 
 /* Titles */
@@ -223,11 +227,11 @@ body {
 }
 
 .service-box.pink { background-color: var(--card-pink); }
-.service-box.purple { background-color: var(--card-purple); }
-.service-box.green { background-color: var(--card-green); }
-.service-box.orange { background-color: var(--card-orange); }
-.service-box.blue { background-color: var(--card-blue); }
-.service-box.peach { background-color: var(--card-peach); }
+.service-box.purple { background-color: var(--card-pink); }
+.service-box.green { background-color: var(--card-pink); }
+.service-box.orange { background-color: var(--card-pink); }
+.service-box.blue { background-color: var(--card-pink); }
+.service-box.peach { background-color: var(--card-pink); }
 
 /* Prices Section */
 .prices {
@@ -284,12 +288,12 @@ body {
     content: '•';
     position: absolute;
     right: 0;
-    color: var(--btn-blue);
+    color: var(--btn-dark);
 }
 
 .price-btn {
     display: block;
-    background-color: var(--btn-blue);
+    background-color: var(--btn-dark);
     color: #fff;
     padding: 10px 0;
     border-radius: 20px;
@@ -298,7 +302,7 @@ body {
 }
 
 .price-btn:hover {
-    background-color: #5b719e;
+    background-color: #666666;
 }
 
 /* Contact Section */
@@ -337,7 +341,7 @@ body {
 
 /* Footer */
 .footer {
-    background-color: var(--footer-bg);
+    background-color: var(--btn-dark);
     color: #fff;
     padding: 25px 8%;
 }
