@@ -5,7 +5,7 @@
     --bg-main: #faf8f5;
     --text-color: #2c2c2c;
     --text-muted: #666666;
-    
+
     /* ألوان بطاقات الخدمات (Pastels) */
     --card-pink: #fce8e6;
     --card-purple: #ede8f5;
@@ -13,7 +13,7 @@
     --card-orange: #fdecdb;
     --card-blue: #e3ebf7;
     --card-peach: #fcebe6;
-    
+
     /* ألوان الأزرار والتفاصيل */
     --btn-blue: #7188ba;
     --btn-dark: #1e1e1e;
@@ -80,7 +80,8 @@ body {
     position: relative;
 }
 
-.navbar a.active, .navbar a:hover {
+.navbar a.active,
+.navbar a:hover {
     font-weight: 700;
 }
 
@@ -107,7 +108,8 @@ body {
 
 .home-content-box {
     display: flex;
-    flex-direction: column; /* جعل الصورة فوق والنص تحتها دائماً */
+    flex-direction: column;
+    /* جعل الصورة فوق والنص تحتها دائماً */
     align-items: center;
     gap: 20px;
     max-width: 700px;
@@ -116,7 +118,8 @@ body {
 
 .home-image {
     width: 100%;
-    height: 320px; /* ارتفاع متناسق وممتاز للصورة */
+    height: 320px;
+    /* ارتفاع متناسق وممتاز للصورة */
     border-radius: 20px;
     overflow: hidden;
 }
@@ -132,7 +135,8 @@ body {
     background-color: var(--card-orange);
     padding: 35px 25px;
     border-radius: 20px;
-    height: auto; /* ارتفاع مرن ليتناسب مع النص تماماً */
+    height: auto;
+    /* ارتفاع مرن ليتناسب مع النص تماماً */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -222,12 +226,29 @@ body {
     font-weight: 700;
 }
 
-.service-box.pink { background-color: var(--card-pink); }
-.service-box.purple { background-color: var(--card-purple); }
-.service-box.green { background-color: var(--card-green); }
-.service-box.orange { background-color: var(--card-orange); }
-.service-box.blue { background-color: var(--card-blue); }
-.service-box.peach { background-color: var(--card-peach); }
+.service-box.pink {
+    background-color: var(--card-pink);
+}
+
+.service-box.purple {
+    background-color: var(--card-purple);
+}
+
+.service-box.green {
+    background-color: var(--card-green);
+}
+
+.service-box.orange {
+    background-color: var(--card-orange);
+}
+
+.service-box.blue {
+    background-color: var(--card-blue);
+}
+
+.service-box.peach {
+    background-color: var(--card-peach);
+}
 
 /* Prices Section */
 .prices {
@@ -235,9 +256,13 @@ body {
 }
 
 .prices-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 20px;
+}
+
+section[id] {
+    scroll-margin-top: 100px;
 }
 
 .price-box {
@@ -246,7 +271,7 @@ body {
     border-radius: 20px;
     padding: 30px 20px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
 }
 
 .price-box h3 {
@@ -320,9 +345,17 @@ body {
     display: block;
 }
 
-.contact-item .fa-whatsapp { color: #25D366; }
-.contact-item .fa-instagram { color: #C13584; }
-.contact-item .fa-map-marker-alt { color: #835c6a; }
+.contact-item .fa-whatsapp {
+    color: #25D366;
+}
+
+.contact-item .fa-instagram {
+    color: #C13584;
+}
+
+.contact-item .fa-map-marker-alt {
+    color: #835c6a;
+}
 
 .contact-item span {
     display: block;
@@ -348,16 +381,28 @@ body {
     align-items: center;
 }
 
-.footer .logo a { color: #fff; }
-.footer .logo span { color: #ddd; }
-.footer p { font-size: 0.85rem; color: #eee; }
+.footer .logo a {
+    color: #fff;
+}
+
+.footer .logo span {
+    color: #ddd;
+}
+
+.footer p {
+    font-size: 0.85rem;
+    color: #eee;
+}
 
 .social-icons {
     display: flex;
     gap: 15px;
 }
 
-.social-icons a { color: #fff; font-size: 1.1rem; }
+.social-icons a {
+    color: #fff;
+    font-size: 1.1rem;
+}
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
@@ -381,7 +426,7 @@ body {
         background: rgba(250, 248, 245, 0.98);
         padding: 20px 0;
         text-align: center;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
         border-bottom: 1px solid #eaeaea;
     }
 
