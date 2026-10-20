@@ -7,18 +7,16 @@
     --text-muted: #666666;
 
     /* ألوان بطاقات الخدمات (Pastels) */
-<<<<<<< HEAD
-    --card-pink: #F4EFE6;
-    
-=======
-    --card-pink: #fce8e6;
+    <<<<<<< HEAD --card-pink: #F4EFE6;
+
+    =======--card-pink: #fce8e6;
     --card-purple: #ede8f5;
     --card-green: #e2f0e8;
     --card-orange: #fdecdb;
     --card-blue: #e3ebf7;
     --card-peach: #fcebe6;
 
->>>>>>> origin/main
+    >>>>>>>origin/main
     /* ألوان الأزرار والتفاصيل */
     --btn-blue: #7188ba;
     --btn-dark: #8B6F5C;
@@ -65,12 +63,12 @@ body {
     line-height: 1;
 }
 
-.logo a img{
+.logo a img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    object-fit:cover;
-    display:block;
+    object-fit: cover;
+    display: block;
 }
 
 .logo span {
@@ -241,12 +239,29 @@ body {
 }
 
 
-.service-box.pink { background-color: var(--card-pink); }
-.service-box.purple { background-color: var(--card-pink); }
-.service-box.green { background-color: var(--card-pink); }
-.service-box.orange { background-color: var(--card-pink); }
-.service-box.blue { background-color: var(--card-pink); }
-.service-box.peach { background-color: var(--card-pink); }
+.service-box.pink {
+    background-color: var(--card-pink);
+}
+
+.service-box.purple {
+    background-color: var(--card-pink);
+}
+
+.service-box.green {
+    background-color: var(--card-pink);
+}
+
+.service-box.orange {
+    background-color: var(--card-pink);
+}
+
+.service-box.blue {
+    background-color: var(--card-pink);
+}
+
+.service-box.peach {
+    background-color: var(--card-pink);
+}
 
 
 /* Prices Section */
@@ -342,6 +357,23 @@ section[id] {
     font-size: 2rem;
     margin-bottom: 8px;
     display: block;
+}
+
+/* جعل وسائل التواصل روابط قابلة للنقر */
+.contact-item {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+}
+
+.contact-item p {
+    overflow-wrap: anywhere;
 }
 
 .contact-item .fa-whatsapp {
