@@ -458,3 +458,228 @@ section[id] {
         grid-template-columns: 1fr;
     }
 }
+
+
+
+
+
+
+
+
+/* =========================================
+Graduation Gallery - معرض صور التخرج
+========================================= */
+
+.gallery-page {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    font-family: 'Tajawal', sans-serif;
+}
+
+.graduation-gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px 25px 60px;
+}
+
+/* رأس صفحة المعرض */
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.gallery-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.gallery-back:hover {
+    color: var(--text-color);
+    transform: translateX(4px);
+}
+
+.gallery-title {
+    margin: 0 0 10px;
+    color: var(--text-color);
+    font-size: clamp(28px, 5vw, 42px);
+}
+
+.gallery-subtitle {
+    margin: 0;
+    color: #777;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.gallery-decoration {
+    width: 65px;
+    height: 3px;
+    margin: 18px auto 0;
+    border-radius: 5px;
+    background: var(--card-orange);
+}
+
+/* شبكة الصور بتنسيق Masonry */
+
+.photo-grid {
+    columns: 3;
+    column-gap: 18px;
+}
+
+.photo-item {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0 0 18px;
+    padding: 0;
+    overflow: hidden;
+    break-inside: avoid;
+    border: none;
+    border-radius: 13px;
+    background: var(--card-orange);
+    cursor: pointer;
+}
+
+.photo-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.04);
+}
+
+.photo-item::after {
+    content: "\f00e";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(45, 30, 40, 0.22);
+    color: white;
+    font-family: "Font Awesome 6 Free";
+    font-size: 25px;
+    font-weight: 900;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-item:hover::after {
+    opacity: 1;
+}
+
+/* نافذة عرض الصور بالحجم الكبير */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px 25px;
+    background: rgba(20, 15, 20, 0.94);
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-image {
+    display: block;
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 18px;
+    left: 25px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 50%;
+    background:var(--btn-dark);
+    color: white;
+    font-size: 21px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.lightbox-prev {
+    right: 20px;
+}
+
+.lightbox-next {
+    left: 20px;
+}
+
+/* تنسيق الأجهزة اللوحية */
+
+@media (max-width: 800px) {
+    .photo-grid {
+        columns: 2;
+    }
+}
+
+/* تنسيق الهواتف */
+
+@media (max-width: 480px) {
+    .graduation-gallery {
+        padding: 25px 14px 40px;
+    }
+
+     .photo-grid {
+        columns: 2;
+        column-gap: 10px;
+    }
+
+    .photo-item {
+        margin-bottom: 10px;
+        border-radius: 9px;
+    }
+
+    .lightbox-prev {
+        right: 8px;
+    }
+
+    .lightbox-next {
+        left: 8px;
+    }
+
+    
+}
