@@ -714,3 +714,154 @@ Graduation Gallery - معرض صور التخرج
 
     
 }
+
+
+
+/* ===================================
+إدارة صور لوحة تحكم نور
+=================================== */
+
+[hidden] {
+    display: none !important;
+}
+
+.back-button {
+    background: #f3e8ed;
+    color: #835c6a;
+    margin-bottom: 20px;
+}
+
+.gallery-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.gallery-heading h2 {
+    margin-bottom: 8px;
+}
+
+.gallery-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.add-button {
+    background: #835c6a;
+    color: white;
+}
+
+.add-button:hover {
+    background: #704958;
+}
+
+.delete-button {
+    background: #fff0f0;
+    color: #b42318;
+}
+
+.delete-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.category {
+    cursor: pointer;
+    text-align: right;
+    font-family: inherit;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px #835c6a20;
+}
+
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.photo-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #eadde3;
+    border-radius: 12px;
+    background: #fdfafd;
+}
+
+.photo-card img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.photo-card-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    overflow-wrap: anywhere;
+}
+
+.photo-card-info input {
+    width: 18px;
+    height: 18px;
+    accent-color: #835c6a;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.photo-card-info label {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#status {
+    margin-top: 16px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+#status.error {
+    color: #b42318;
+}
+
+#status.success {
+    color: #18794e;
+}
+
+@media (max-width: 600px) {
+    .photos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+     .photo-card img {
+        height: 150px;
+    }
+
+    .gallery-heading {
+        align-items: flex-start;
+    }
+
+    .gallery-actions {
+        width: 100%;
+    }
+
+}
