@@ -179,17 +179,13 @@
 
         <p class="privacy-note">🔒 مساحة خاصة بإدارة الصور</p>
     </main>
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
     <script>
-        // القيم المأخوذة من مشروعك
-        const SUPABASE_URL = 'https://wlrrudwtvaayfxhbcyih.supabase.co';
-        const SUPABASE_ANON_KEY = 'sb_publishable_HLSqrmp2JVGe4T-dz0UWWA_wcKCY4P_'; // ضعي المفتاح كامل هنا
-
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
         const loginForm = document.getElementById('loginForm');
         const loginButton = document.getElementById('loginButton');
         const messageEl = document.getElementById('message');
+        console.log('Login JavaScript is running');
 
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -203,7 +199,8 @@
             messageEl.className = '';
 
             try {
-                const { data, error } = await supabase.auth.signInWithPassword({
+                // نستخدم supabase المُمثّل والمُعرّف مسبقاً في ملف supabase.js الخاص بكِ
+                const { data, error } = await supabaseClient.auth.signInWithPassword({
                     email: email,
                     password: password,
                 });
@@ -218,6 +215,7 @@
                 }, 1000);
 
             } catch (error) {
+                console.error('Login error: ', error)
                 messageEl.textContent = 'خطأ: البريد الإلكتروني أو كلمة المرور غير صحيحة.';
                 messageEl.className = 'error';
             } finally {
