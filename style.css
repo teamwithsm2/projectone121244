@@ -221,6 +221,11 @@ body {
     align-items: center;
     gap: 12px;
     transition: transform 0.3s;
+    background-color: var(--card-orange);
+}
+
+#categories-container .service-box.purple {
+    background: var(--card-orange) !important;
 }
 
 .service-box:hover {
@@ -237,9 +242,8 @@ body {
     font-weight: 700;
 }
 
-
-.service-box.pink {
-    background-color: var(--card-pink);
+.service-box.purple {
+    background-color: var(--card-orange);
 }
 
 .service-box.purple {
@@ -279,7 +283,7 @@ section[id] {
 }
 
 .price-box {
-    background: #fff;
+    background: var(--card-orange);
     border: 1px solid #eaeaea;
     border-radius: 20px;
     padding: 30px 20px;
