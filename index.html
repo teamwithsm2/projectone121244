@@ -52,42 +52,8 @@
     <section id="portfolio" class="services-section">
         <h2 class="section-title">أعمالي</h2>
         <p class="section-subtitle">تصوير مناسباتك بكل حب</p>
-        <div class="services-grid">
-        <a href="galleries/birthdays.html" class="service-box purple" style="text-decoration: none; color: inherit;">
-                <i class="fas fa-birthday-cake"></i>
-                <h3>أعياد الميلاد</h3>
-                    </a>
-
-        
-        <a href="galleries/graduation.html" class="service-box purple" style="text-decoration: none; color: inherit;">
-        
-            <i class="fas fa-graduation-cap"></i>
-            <h3>التخرج</h3>
-        
-        </a>
-        
-
-        <a href="galleries/wedding.html" class="service-box purple" style="text-decoration: none; color: inherit;">
-                <i class="fas fa-ring"></i>
-                <h3>الخطوبة والزفاف</h3>
-            </a>
-            <a href="galleries/babybirthdays.html" class="service-box purple" style="text-decoration: none; color: inherit;">
-                <i class="fas fa-baby"></i>
-                <h3> أعياد ميلاد اطفال</h3>
-        </a>
-            <a href="galleries/products.html" class="service-box purple" style="text-decoration: none; color: inherit;">
-                <i class="fas fa-box-open"></i>
-                <h3>منتجات</h3>
-        </a>
-
-        <a href="galleries/Bachelorette party.html" class="service-box purple" style="text-decoration: none; color: inherit;">
-        <i class="fas fa-heart"></i>
-            <h3>توديع عزوبية</h3>
-        </a>
-            <!-- <div class="service-box peach">
-                <i class="fas fa-users"></i>
-                <h3>المناسبات العائلية</h3>
-            </div> -->
+        <div class="services-grid" id="categories-container">
+            <p class="loading-message">جاري تحميل التصنيفات...</p>
         </div>
     </section>
 
@@ -127,45 +93,39 @@
         </div>
     </section>
 
- 
-            <!-- قسم تواصل معي -->
-<section id="contact" class="contact">
-    <h2 class="section-title">تواصل معي</h2>
 
-    <div class="contact-info-grid">
+    <!-- قسم تواصل معي -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">تواصل معي</h2>
 
-        <!-- WhatsApp -->
-        <a href="https://wa.me/967736781746"
-           class="contact-item"
-           target="_blank"
-           rel="noopener noreferrer">
-            <i class="fab fa-whatsapp"></i>
-            <span>واتساب</span>
-            <p>تحدث معي عبر واتساب</p>
-        </a>
+        <div class="contact-info-grid">
 
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/noorb_photography?mdxt=Z2o3b2VocXM3ZTFj&utm_source=qr"
-           class="contact-item"
-           target="_blank"
-           rel="noopener noreferrer">
-            <i class="fab fa-instagram"></i>
-            <span>إنستغرام</span>
-            <p>@nourb_photography</p>
-        </a>
+            <!-- WhatsApp -->
+            <a href="https://wa.me/967736781746" class="contact-item" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i>
+                <span>واتساب</span>
+                <p>تحدث معي عبر واتساب</p>
+            </a>
 
-        <!-- Phone Call -->
-        <a href="tel:+967770317985"
-           class="contact-item">
-            <i class="fas fa-phone"></i>
-            <span>الاتصال</span>
-            <p>+967 770 317 985</p>
-        </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/noorb_photography?mdxt=Z2o3b2VocXM3ZTFj&utm_source=qr"
+                class="contact-item" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i>
+                <span>إنستغرام</span>
+                <p>@nourb_photography</p>
+            </a>
 
-    </div>
-</section>
+            <!-- Phone Call -->
+            <a href="tel:+967770317985" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>الاتصال</span>
+                <p>+967 770 317 985</p>
+            </a>
 
         </div>
+    </section>
+
+    </div>
     </section>
 
     <!-- التذييل (Footer) -->
@@ -184,6 +144,8 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
     <script src="script.js"></script>
 </body>
 

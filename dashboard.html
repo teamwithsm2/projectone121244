@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم نور للتصوير</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Tajawal', sans-serif;
+            background: #f8f5f7;
+            color: #44343d;
+        }
+
+        header {
+            background: #835c6a;
+            color: white;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 23px;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: 0;
+            border-radius: 9px;
+            padding: 11px 18px;
+            font-size: 15px;
+        }
+
+        #logoutButton {
+            background: white;
+            color: #835c6a;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        .welcome,
+        .panel {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 18px #835c6a12;
+        }
+
+        .welcome h2,
+        .panel h2 {
+            margin-top: 0;
+        }
+
+        .muted {
+            color: #786b72;
+            line-height: 1.8;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .category {
+            padding: 20px;
+            border: 1px solid #eadde3;
+            border-radius: 12px;
+            background: #fdfafd;
+        }
+
+        .category i {
+            color: #835c6a;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .category h3 {
+            font-size: 17px;
+            margin: 8px 0 0;
+        }
+
+        #status {
+            margin-top: 14px;
+            line-height: 1.8;
+        }
+
+        .error {
+            color: #b42318;
+        }
+
+        @media (max-width: 500px) {
+
+            .welcome,
+            .panel {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><i class="fa-solid fa-camera"></i> لوحة تحكم نور</h1>
+        <button id="logoutButton" type="button">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            تسجيل الخروج
+        </button>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <h2>أهلًا بكِ في لوحة التحكم 🌷</h2>
+            <p class="muted">
+                من هنا ستتمكنين من تنظيم صور أعمالكِ والتحكم في الصور
+                التي تظهر لزوار موقع نور للتصوير.
+            </p>
+            <p id="accountEmail" class="muted">جارٍ التحقق من الحساب...</p>
+        </section>
+
+        <section class="panel">
+            <h2>تصنيفات الصور</h2>
+            <p class="muted">
+                هذه التصنيفات تُحمّل من قاعدة بيانات Supabase.
+            </p>
+
+            <div id="categories" class="categories">
+                جارٍ تحميل التصنيفات...
+            </div>
+
+            <p id="status" class="muted"></p>
+        </section>
+
+        <section class="panel">
+            <h2>إدارة الصور</h2>
+            <p class="muted">
+                سنضيف هنا رفع الصور، واختيار التصنيف، وتحديد الصور
+                المنشورة، وحذف الصور وترتيبها في الخطوة القادمة.
+            </p>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+
+    <script>
+        const accountEmail = document.getElementById('accountEmail');
+        const categoriesEl = document.getElementById('categories');
+        const statusEl = document.getElementById('status');
+        const logoutButton = document.getElementById('logoutButton');
+
+        // استبدلي هذا بإيميل نور نفسه.
+        const allowedEmail = 'manaralashiry057@gmail.com';
+
+        async function initDashboard() {
+            try {
+                const { data, error } =
+                    await supabaseClient.auth.getSession();
+
+                if (error) throw error;
+
+                const session = data.session;
+
+                if (!session) {
+                    window.location.replace('login.html');
+                    return;
+                }
+
+                if (
+                    session.user.email?.toLowerCase() !==
+                    allowedEmail.toLowerCase()
+                ) {
+                    await supabaseClient.auth.signOut();
+                    window.location.replace('login.html');
+                    return;
+                }
+
+                accountEmail.textContent =
+                    'الحساب الحالي: ' + session.user.email;
+
+                const { data: categories, error: categoryError } =
+                    await supabaseClient
+                        .from('categories')
+                        .select('name');
+
+                if (categoryError) throw categoryError;
+
+                categoriesEl.replaceChildren();
+
+                if (!categories || categories.length === 0) {
+                    categoriesEl.textContent = 'لا توجد تصنيفات حاليًا.';
+                    return;
+                }
+
+                categories.forEach(category => {
+                    const card = document.createElement('div');
+                    card.className = 'category';
+
+                    const icon = document.createElement('i');
+                    icon.className = 'fa-solid fa-camera';
+
+                    const heading = document.createElement('h3');
+                    heading.textContent = category.name;
+
+                    card.append(icon, heading);
+                    categoriesEl.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error(error);
+                statusEl.textContent =
+                    'تعذر تحميل البيانات. تحققي من إعدادات الاتصال بقاعدة البيانات.';
+                statusEl.className = 'error';
+            }
+        }
+
+        logoutButton.addEventListener('click', async () => {
+            const { error } = await supabaseClient.auth.signOut();
+
+            if (error) {
+                statusEl.textContent = 'تعذر تسجيل الخروج. حاولي مرة أخرى.';
+                statusEl.className = 'error';
+                return;
+            }
+
+            window.location.replace('login.html');
+        });
+
+        initDashboard();
+    </script>
+</body>
+
+</html>
