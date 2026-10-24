@@ -1,6 +1,28 @@
 /* استيراد الخط والتصاميم الأساسية */
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
 
+:root {
+    --bg-main: #faf8f5;
+    --text-color: #2c2c2c;
+    --text-muted: #666666;
+
+    /* ألوان بطاقات الخدمات (Pastels) */
+    <<<<<<< HEAD --card-pink: #F4EFE6;
+
+    =======--card-pink: #fce8e6;
+    --card-purple: #ede8f5;
+    --card-green: #e2f0e8;
+    --card-orange: #fdecdb;
+    --card-blue: #e3ebf7;
+    --card-peach: #fcebe6;
+
+    >>>>>>>origin/main
+    /* ألوان الأزرار والتفاصيل */
+    --btn-blue: #7188ba;
+    --btn-dark: #8B6F5C;
+    --footer-bg: #835c6a;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -638,7 +660,7 @@ Graduation Gallery - معرض صور التخرج
     transform: translateY(-50%);
     border: none;
     border-radius: 50%;
-    background:var(--btn-dark);
+    background: var(--btn-dark);
     color: white;
     font-size: 21px;
     cursor: pointer;
@@ -673,7 +695,7 @@ Graduation Gallery - معرض صور التخرج
         padding: 25px 14px 40px;
     }
 
-     .photo-grid {
+    .photo-grid {
         columns: 2;
         column-gap: 10px;
     }
@@ -691,5 +713,5 @@ Graduation Gallery - معرض صور التخرج
         left: 8px;
     }
 
-    
+
 }
