@@ -21,6 +21,8 @@
             --text: #30272b;
             --muted: #81767b;
             --border: #e8dfe3;
+            --btn-dark: #8B6F5C;
+            --text-muted: #666666;
         }
 
         body {
@@ -52,13 +54,13 @@
             display: grid;
             place-items: center;
             border-radius: 18px;
-            background: var(--primary);
+            background: var(--btn-dark);
             color: #fff;
             font: 31px Georgia, serif;
         }
 
         .brand-name {
-            color: var(--primary);
+            color: var(--btn-dark);
             font-size: 10px;
             letter-spacing: 3px;
             direction: ltr;
@@ -98,7 +100,7 @@
         }
 
         input:focus {
-            border-color: var(--primary);
+            border-color: var(--btn-dark);
             box-shadow: 0 0 0 3px #835c6a20;
         }
 
@@ -109,7 +111,7 @@
             padding: 12px;
             border: 0;
             border-radius: 10px;
-            background: var(--primary);
+            background: var(--btn-dark);
             color: #fff;
             font: inherit;
             font-weight: bold;
@@ -117,7 +119,7 @@
         }
 
         button:hover {
-            background: var(--hover);
+            background: var(--text-muted);
         }
 
         button:disabled {
@@ -159,7 +161,7 @@
 <body>
     <main class="login-card">
         <div class="brand-mark">N</div>
-        <p class="brand-name">NOUR PHOTOGRAPHY</p>
+        <p class="brand-name">NOOR PHOTOGRAPHY</p>
         <h1>لوحة الإدارة</h1>
         <p class="intro">أهلًا نور، سجّلي الدخول لإدارة معرض صورك.</p>
 
