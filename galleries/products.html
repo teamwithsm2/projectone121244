@@ -41,50 +41,12 @@
 
         </header>
 
-        <section class="photo-grid" aria-label="صور منتجات">
-
-            <button class="photo-item" type="button">
-                <img src="../images/products/pro1.jpeg" alt="صورة  منتجات 1" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/products/pro10.jpeg" alt="صورة عيدميلاد منتجات 2" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/products/pro2.jpeg" alt="صورة  عيدميلاد منتجات 3" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/products/pro3.jpeg" alt="صورة عيدميلاد منتجات 4" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/products/pro4.jpeg" alt="صورة عيدميلاد منتجات 5" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/products/pro5.jpeg" alt="صورة عيدميلاد منتجات 6" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/products/pro6.jpeg" alt="صورة عيدميلاد منتجات 7" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/products/pro7.jpeg" alt="صورة عيدميلاد منتجات 8" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/products/pro8.jpeg" alt="صورة عيدميلاد منتجات 9" loading="lazy">
-            </button>
-            <button class="photo-item" type="button">
-                <img src="../images/products/pro9.jpeg" alt="صورة عيدميلاد منتجات 10" loading="lazy">
-            </button>
-            <button class="photo-item" type="button">
-                <img src="../images/products/pro11.jpeg" alt="صورة عيدميلاد منتجات 11" loading="lazy">
-            </button>
+        <section class="photo-grid" id="productsGallery" aria-label="صور المنتجات">
+            <p id="galleryStatus" role="status" aria-live="polite">
+                جارٍ تحميل الصور...
+            </p>
         </section>
+
 
     </main>
 
@@ -107,7 +69,14 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <script src="../supabase.js"></script>
+    
     <script src="../script.js"></script>
+    
+    <script src="../products-gallery.js"></script>
+
 
 
 </body>

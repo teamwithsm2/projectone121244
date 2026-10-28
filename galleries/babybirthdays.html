@@ -41,56 +41,15 @@
 
         </header>
 
-        <section class="photo-grid" aria-label="صور عيدميلاد اطفال">
-
-            <button class="photo-item" type="button">
-                <img src="../images/babybirthdays/babybirth1.jpeg" alt="صورة عيدميلاد اطفال 1" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/babybirthdays/babybirth2.jpeg" alt="صورة عيدميلاد اطفال 2" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/babybirthdays/babybirth3.jpeg" alt="صورة  عيدميلاد اطفال 3" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/babybirthdays/babybirth4.jpeg" alt="صورة عيدميلاد اطفال 4" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/babybirthdays/babybirth5.jpeg" alt="صورة عيدميلاد اطفال 5" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/babybirthdays/babybirth6.jpeg" alt="صورة عيدميلاد اطفال 6" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/babybirthdays/babybirth7.jpeg" alt="صورة عيدميلاد اطفال 7" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/babybirthdays/babybirth8.jpeg" alt="صورة عيدميلاد اطفال 8" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/babybirthdays/babybirth11.jpeg" alt="صورة عيدميلاد اطفال 9" loading="lazy">
-            </button>
-            <button class="photo-item" type="button">
-                <img src="../images/babybirthdays/babybirth12.jpeg" alt="صورة عيدميلاد اطفال 10" loading="lazy">
-            </button>
-            <button class="photo-item" type="button">
-                <img src="../images/babybirthdays/babybirth13.jpeg" alt="صورة عيدميلاد اطفال 11" loading="lazy">
-            </button>
-            <button class="photo-item" type="button">
-                <img src="../images/babybirthdays/babybirth14.jpeg" alt="صورة عيدميلاد اطفال 12" loading="lazy">
-            </button>
-            <button class="photo-item" type="button">
-                <img src="../images/babybirthdays/babybirth9.jpeg" alt="صورة عيدميلاد اطفال 13" loading="lazy">
-            </button>
+        
+        <section class="photo-grid" id="babyBirthdayGallery" aria-label="صور عيد ميلاد الأطفال">
+        
+            <p id="galleryStatus" role="status" aria-live="polite">
+                جارٍ تحميل الصور...
+            </p>
+        
         </section>
+        
 
     </main>
 
@@ -113,7 +72,16 @@
 
     </div>
 
+   
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../supabase.js"></script>
     <script src="../script.js"></script>
+    <script src="../baby-birthday-gallery.js"></script>
+    
+
+    
+
 
 
 </body>
