@@ -41,42 +41,10 @@
 
         </header>
 
-        <section class="photo-grid" aria-label="صور عزوبية ">
-
-            <button class="photo-item" type="button">
-                <img src="../images/party/party1.jpeg" alt="صورة عزوبية  1" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/party/party2.jpeg" alt="صورة عزوبية  2" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/party/party3.jpeg" alt="صورة  عزوبية  3" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/party/party4.jpeg" alt="صورة عزوبية  4" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/party/party5.jpeg" alt="صورة عزوبية  5" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/party/party6.jpeg" alt="صورة عزوبية  6" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/party/party7.jpeg" alt="صورة عزوبية  7" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/party/party8.jpeg" alt="صورة عزوبية  8" loading="lazy">
-            </button>
-
-          
-
+        <section class="photo-grid" id="bacheloretteGallery" aria-label="صور توديع العزوبية">
+            <p id="galleryStatus" role="status" aria-live="polite">
+                جارٍ تحميل الصور...
+            </p>
         </section>
 
     </main>
@@ -100,7 +68,14 @@
 
     </div>
 
-    <script src="../script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../supabase.js"></script>
+
+<script src="../script.js"></script>
+
+<script src="../bachelorette-gallery.js"></script>
+
 
 
 </body>

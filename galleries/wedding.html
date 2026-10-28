@@ -41,57 +41,10 @@
 
         </header>
 
-        <section class="photo-grid" aria-label="صور مناسبات">
-
-            <button class="photo-item" type="button">
-                <img src="../images/weddings/wed1.jpeg" alt="صورة  مناسبات 1" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/weddings/wed2.jpeg" alt="صورة عيدميلاد مناسبات 2" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/weddings/wed12.jpeg" alt="صورة  عيدميلاد مناسبات 3" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/weddings/wed13.jpeg" alt="صورة عيدميلاد مناسبات 4" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/weddings/wed4.jpeg" alt="صورة عيدميلاد مناسبات 5" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/weddings/wed8.jpeg" alt="صورة عيدميلاد مناسبات 6" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/weddings/wed7.jpeg" alt="صورة عيدميلاد مناسبات 6" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/weddings/wed10.jpeg" alt="صورة عيدميلاد مناسبات 6" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/weddings/wed9.jpeg" alt="صورة عيدميلاد مناسبات 6" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/weddings/wed5.jpeg" alt="صورة عيدميلاد مناسبات 6" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/weddings/wed3.jpeg" alt="صورة عيدميلاد مناسبات 6" loading="lazy">
-            </button>
-            <button class="photo-item" type="button">
-                <img src="../images/weddings/wed6.jpeg" alt="صورة عيدميلاد مناسبات 6" loading="lazy">
-            </button>
-            <button class="photo-item" type="button">
-                <img src="../images/weddings/wed11.jpeg" alt="صورة عيدميلاد مناسبات 6" loading="lazy">
-            </button>
+        <section class="photo-grid" id="engagementWeddingsGallery" aria-label="صور المناسبات">
+            <p id="galleryStatus" role="status" aria-live="polite">
+                جارٍ تحميل الصور...
+            </p>
         </section>
 
     </main>
@@ -115,7 +68,14 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <script src="../supabase.js"></script>
+    
     <script src="../script.js"></script>
+    
+    <script src="../engagement-weddings-gallery.js"></script>
+
 
 
 </body>
