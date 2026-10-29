@@ -15,6 +15,11 @@
             box-sizing: border-box;
         }
 
+        :root{
+           --btn-dark: #8B6F5C; 
+           --card-orange: #fdecdb;
+        }
+
         body {
             margin: 0;
             font-family: 'Tajawal', sans-serif;
@@ -23,7 +28,7 @@
         }
 
         header {
-            background: #835c6a;
+            background: var(--btn-dark);
             color: white;
             padding: 20px 6%;
             display: flex;
@@ -86,7 +91,7 @@
             padding: 20px;
             border: 1px solid #eadde3;
             border-radius: 12px;
-            background: #fdfafd;
+            background:var(--card-orange)
         }
 
         .category i {
@@ -134,7 +139,7 @@
 }
 
 .back-button {
-    background: #f3e8ed;
+    background:var(--card-orange);
     color: #835c6a;
     margin-bottom: 20px;
 }
@@ -155,7 +160,7 @@
 }
 
 .add-button {
-    background: #835c6a;
+    background: var(--btn-dark);
     color: white;
 }
 
@@ -201,7 +206,7 @@
 .photo-card-info input {
     width: 18px;
     height: 18px;
-    accent-color: #835c6a;
+    accent-color: var(--btn-dark);
     cursor: pointer;
     flex-shrink: 0;
 }
