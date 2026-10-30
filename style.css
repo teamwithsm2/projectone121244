@@ -7,16 +7,16 @@
     --text-muted: #666666;
 
     /* ألوان بطاقات الخدمات (Pastels) */
-    <<<<<<< HEAD --card-pink: #F4EFE6;
+    --card-pink: #F4EFE6;
 
-    =======--card-pink: #fce8e6;
+    --card-pink: #fce8e6;
     --card-purple: #ede8f5;
     --card-green: #e2f0e8;
     --card-orange: #fdecdb;
     --card-blue: #e3ebf7;
     --card-peach: #fcebe6;
 
-    >>>>>>>origin/main
+
     /* ألوان الأزرار والتفاصيل */
     --btn-blue: #7188ba;
     --btn-dark: #8B6F5C;
