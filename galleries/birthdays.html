@@ -40,54 +40,12 @@
 
         </header>
 
-        <section class="photo-grid" aria-label="صور عيدميلاد ">
+    <section class="photo-grid" id="birthdayGallery" aria-label="صور أعياد الميلاد">
+        <p id="galleryStatus" role="status" aria-live="polite">
+            جارٍ تحميل الصور...
+        </p>
+    </section>
 
-            <button class="photo-item" type="button">
-                <img src="../images/birthdays/birthday1.jpeg" alt="صورة عيدميلاد  1" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/birthdays/birthday2.jpeg" alt="صورة عيدميلاد  2" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/birthdays/birthday3.jpeg" alt="صورة  عيدميلاد  3" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/birthdays/birthday4.jpeg" alt="صورة عيدميلاد  4" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/birthdays/birthday5.jpeg" alt="صورة عيدميلاد  5" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/birthdays/birthday6.jpeg" alt="صورة عيدميلاد  6" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/birthdays/birthday7.jpeg" alt="صورة عيدميلاد  7" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/birthdays/birthday8.jpeg" alt="صورة عيدميلاد  8" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/birthdays/birthday9.jpeg" alt="صورة عيدميلاد  9" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/birthdays/birthday10.jpeg" alt="صورة عيدميلاد  10" loading="lazy">
-            </button>
-
-            <button class="photo-item" type="button">
-                <img src="../images/birthdays/birthday11.jpeg" alt="صورة عيدميلاد  11" loading="lazy">
-            </button>
-
-           
-        </section>
 
     </main>
 
@@ -110,7 +68,15 @@
 
     </div>
 
-    <script src="../script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../supabase.js"></script>
+
+<script src="../script.js"></script>
+
+<script src="../birthday-gallery.js"></script>
+
+
 
 
 </body>

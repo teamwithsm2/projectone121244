@@ -11,7 +11,7 @@ const supabaseClient = window.supabase.createClient(
 // روابط صفحات المعارض الحالية
 const categoryPages = {
     'الخطوبة والزفاف': 'galleries/wedding.html',
-    'منتجات': 'galleries/products.html',
+    'تصوير منتجات': 'galleries/products.html',
     'أعياد الميلاد': 'galleries/birthdays.html',
     'توديع عزوبية': 'galleries/Bachelorette party.html',
     'أعياد ميلاد أطفال': 'galleries/babybirthdays.html',
