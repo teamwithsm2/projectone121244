@@ -31,14 +31,101 @@ if (contactForm) {
 Graduation Gallery - معرض صور التخرج
 ========================================= */
 
+// document.addEventListener('DOMContentLoaded', function () {
+//     const lightbox = document.getElementById('lightbox');
+
+
+//     // لا تنفذ كود المعرض في الصفحات التي لا تحتوي عليه.
+//     if (!lightbox) return;
+
+//     const photoButtons = document.querySelectorAll('.photo-item');
+//     const lightboxImage = document.getElementById('lightboxImage');
+//     const closeButton = document.getElementById('lightboxClose');
+//     const prevButton = document.getElementById('lightboxPrev');
+//     const nextButton = document.getElementById('lightboxNext');
+
+//     let currentIndex = 0;
+
+//     function showPhoto(index) {
+//         if (photoButtons.length === 0) return;
+
+//         currentIndex = (index + photoButtons.length) % photoButtons.length;
+
+//         const image = photoButtons[currentIndex].querySelector('img');
+
+//         lightboxImage.src = image.src;
+//         lightboxImage.alt = image.alt;
+//         lightbox.classList.add('active');
+
+//         document.body.style.overflow = 'hidden';
+//         closeButton.focus();
+//     }
+
+//     function closeLightbox() {
+//         lightbox.classList.remove('active');
+//         lightboxImage.src = '';
+//         document.body.style.overflow = '';
+//     }
+
+//     // فتح الصورة عند الضغط عليها.
+//     photoButtons.forEach(function (button, index) {
+//         button.addEventListener('click', function () {
+//             showPhoto(index);
+//         });
+//     });
+
+//     // إغلاق المعرض.
+//     closeButton.addEventListener('click', closeLightbox);
+
+//     // الصورة السابقة.
+//     prevButton.addEventListener('click', function () {
+//         showPhoto(currentIndex - 1);
+//     });
+
+//     // الصورة التالية.
+//     nextButton.addEventListener('click', function () {
+//         showPhoto(currentIndex + 1);
+//     });
+
+//     // الإغلاق عند الضغط خارج الصورة.
+//     lightbox.addEventListener('click', function (event) {
+//         if (event.target === lightbox) {
+//             closeLightbox();
+//         }
+//     });
+
+//     // التحكم باستخدام لوحة المفاتيح.
+//     document.addEventListener('keydown', function (event) {
+//         if (!lightbox.classList.contains('active')) return;
+
+//         if (event.key === 'Escape') {
+//             closeLightbox();
+//         }
+
+//         if (event.key === 'ArrowRight') {
+//             showPhoto(currentIndex - 1);
+//         }
+
+//         if (event.key === 'ArrowLeft') {
+//             showPhoto(currentIndex + 1);
+//         }
+//     });
+
+
+// });
+
+/* =========================================
+   Nour Photography - Dynamic Gallery Lightbox
+   نافذة تكبير الصور لجميع المعارض
+========================================= */
+
 document.addEventListener('DOMContentLoaded', function () {
+
     const lightbox = document.getElementById('lightbox');
 
-
-    // لا تنفذ كود المعرض في الصفحات التي لا تحتوي عليه.
+    // لا نشغل الكود في الصفحات التي لا تحتوي على معرض.
     if (!lightbox) return;
 
-    const photoButtons = document.querySelectorAll('.photo-item');
     const lightboxImage = document.getElementById('lightboxImage');
     const closeButton = document.getElementById('lightboxClose');
     const prevButton = document.getElementById('lightboxPrev');
@@ -46,56 +133,85 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let currentIndex = 0;
 
+    // جلب الصور الموجودة حاليًا في الصفحة
+    function getPhotoButtons() {
+        return Array.from(document.querySelectorAll('.photo-grid .photo-item'));
+    }
+
+    // عرض صورة معينة
     function showPhoto(index) {
+
+        const photoButtons = getPhotoButtons();
+
         if (photoButtons.length === 0) return;
 
         currentIndex = (index + photoButtons.length) % photoButtons.length;
 
         const image = photoButtons[currentIndex].querySelector('img');
 
+        if (!image) return;
+
         lightboxImage.src = image.src;
         lightboxImage.alt = image.alt;
+
         lightbox.classList.add('active');
 
         document.body.style.overflow = 'hidden';
+
         closeButton.focus();
     }
 
+    // إغلاق نافذة التكبير
     function closeLightbox() {
+
         lightbox.classList.remove('active');
+
         lightboxImage.src = '';
+
         document.body.style.overflow = '';
     }
 
-    // فتح الصورة عند الضغط عليها.
-    photoButtons.forEach(function (button, index) {
-        button.addEventListener('click', function () {
+    // فتح الصور باستخدام Event Delegation
+    // يعمل حتى مع الصور التي تُضاف لاحقًا من Supabase
+    document.addEventListener('click', function (event) {
+
+        const button = event.target.closest('.photo-grid .photo-item');
+
+        if (!button) return;
+
+        const photoButtons = getPhotoButtons();
+
+        const index = photoButtons.indexOf(button);
+
+        if (index !== -1) {
             showPhoto(index);
-        });
+        }
     });
 
-    // إغلاق المعرض.
+    // إغلاق النافذة
     closeButton.addEventListener('click', closeLightbox);
 
-    // الصورة السابقة.
+    // الصورة السابقة
     prevButton.addEventListener('click', function () {
         showPhoto(currentIndex - 1);
     });
 
-    // الصورة التالية.
+    // الصورة التالية
     nextButton.addEventListener('click', function () {
         showPhoto(currentIndex + 1);
     });
 
-    // الإغلاق عند الضغط خارج الصورة.
+    // الإغلاق عند الضغط خارج الصورة
     lightbox.addEventListener('click', function (event) {
+
         if (event.target === lightbox) {
             closeLightbox();
         }
     });
 
-    // التحكم باستخدام لوحة المفاتيح.
+    // التحكم باستخدام لوحة المفاتيح
     document.addEventListener('keydown', function (event) {
+
         if (!lightbox.classList.contains('active')) return;
 
         if (event.key === 'Escape') {
@@ -109,12 +225,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (event.key === 'ArrowLeft') {
             showPhoto(currentIndex + 1);
         }
+
     });
 
-
 });
-
-
 /* =========================================
 Nour Photography - Dashboard Image Manager
 ========================================= */
